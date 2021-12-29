@@ -17,7 +17,7 @@ export default function Header() {
     return (
         <StyledHeader>
             <Title>
-                La mission du Grinch
+                Mission : déverrouillez les cadeaux!
             </Title>
         </StyledHeader>
     )

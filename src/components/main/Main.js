@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Landing from './Landing/Landing'
-import Header from '../header/Header'
-import Answer from './Answer/Answer'
-import Mobile from './Mobile/Mobile'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Landing from './Landing/Landing';
+import Header from '../header/Header';
+import Answer from './Answer/Answer';
+import Sucess from './Success/Sucess';
 
 const Box = styled.div`
     width: 100vw;
@@ -13,14 +13,16 @@ const Box = styled.div`
 `
 
 export default function Main() {
+    const [number, setNumber] = useState(0);
+
     return (
         <Box>
             <Header />
             <Router>
                 <Routes>
                     <Route path="/" element={<Landing />} />
-                    <Route path="/01" element={<Answer />} />
-                    <Route path="/mobile" element={<Mobile />} />
+                    <Route path="/answer" element={<Answer number={number} setNumber={setNumber}/>} />
+                    <Route path="/success" element={<Sucess number={number}/>} />
                 </Routes>
             </Router>
         </Box>
